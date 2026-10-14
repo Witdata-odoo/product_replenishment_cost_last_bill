@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="product_template_form_view_last_bill" model="ir.ui.view">
+        <field name="name">product.template.form.last.bill</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product_replenishment_cost.product_template_form_view"/>
+        <field name="arch" type="xml">
+            <field name="supplier_price" position="attributes">
+                <attribute name="invisible">replenishment_cost_type not in ['supplier_price', 'last_supplier_price', 'last_vendor_bill']</attribute>
+            </field>
+        </field>
+    </record>
+</odoo>
